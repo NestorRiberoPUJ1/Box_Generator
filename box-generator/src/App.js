@@ -20,9 +20,9 @@ function App() {
 
       <div className="row">
         {
-          boxColors.map(color => {
+          boxColors.map((color,index) => {
             return (
-              <ColorBox  BgColor={color.color} Size={color.size} /> 
+              <ColorBox key={color+index} BgColor={color.color} Size={color.size} /> 
             );
           })
         }

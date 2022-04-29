@@ -1,0 +1,4 @@
+.ColorBox {
+    border-radius: 10px;
+    border: 2px dotted currentColor;
+}

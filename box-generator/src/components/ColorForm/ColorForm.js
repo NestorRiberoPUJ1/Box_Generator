@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ColorForm = (props) => {
 
@@ -10,12 +10,18 @@ const ColorForm = (props) => {
         e.preventDefault();
 
         if (thisColor !== "" && thisColor !== undefined) {
-            props.newBox(thisColor,thisSize);
+            props.newBox(thisColor, thisSize);
             let newColors = colors.filter(item => item !== thisColor);
             setColors(newColors);
+            console.log("Lista Filtrada:", newColors);
+            console.log("colors State:", colors);
             setThisColor(newColors[0]);
         }
     }
+
+    useEffect(()=>{
+        console.log("ACTUALICÉ colors:",colors);
+    },[colors])
 
     return (
 
